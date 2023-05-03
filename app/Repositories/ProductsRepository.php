@@ -12,11 +12,8 @@ class ProductsRepository
     }
 
 
-    public function objetos($item_teste = 0){
-        $obj = new stdClass();
-        foreach (Products::find(2, 'id') as $item){
-            $obj->nome_produto = $item->descricao;
-        }
+    public function objetos($id = 0){
+        $obj = Products::find($id);
        return $obj;
     }
 }
